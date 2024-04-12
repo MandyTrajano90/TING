@@ -18,7 +18,7 @@ def exists_word(word, instance):
 
 def search_by_word(word, instance):
     results = list()
-    for item in instance.queue:
+    for item in range(len(instance)):
         path_name = item["nome_do_arquivo"]
         word_exists = list()
         with open(path_name, "r") as file:
