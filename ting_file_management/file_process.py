@@ -26,4 +26,13 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    if position < 0 or position >= len(instance.queue):
+        sys.stderr.write("Posição inválida\n")
+        return
+    file_name = instance.search(position)
+    dict_data = {
+        "nome_do_arquivo": file_name,
+        "qtd_linhas": len(txt_importer(file_name)),
+        "linhas_do_arquivo": txt_importer(file_name),
+    }
+    sys.stdout.write(f"{dict_data}\n")
