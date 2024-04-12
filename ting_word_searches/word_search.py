@@ -8,13 +8,11 @@ def exists_word(word, instance):
                 if word.lower() in line.lower():
                     word_exists.append({"linha": line_number})
         if word_exists:
-            results.append(
-                {
+            results.append({
                 "palavra": word,
                 "arquivo": path_name,
                 "ocorrencias": word_exists
-                }
-            )
+            })
     return results
 
 
